@@ -39,17 +39,17 @@ Task 1
    It works just as `eval` from the previous homework but aborts the computation
    if division by zero occurs:
 
-    * ```
-     runES (eval (2 + 3 * 5 - 7)) []
-       ≡
-     Success (10 :# [Sub 17 7, Add 2 15, Mul 3 5])
-     ```
+   ```
+   runES (eval (2 + 3 * 5 - 7)) []
+     ≡
+   Success (10 :# [Sub 17 7, Add 2 15, Mul 3 5])
+   ```
 
-    * ```
-     runES (eval (1 / (10 - 5 * 2))) []
-       ≡
-     Error DivideByZero
-     ```
+   ```
+   runES (eval (1 / (10 - 5 * 2))) []
+     ≡
+   Error DivideByZero
+   ```
 
 Task 2
 ------
@@ -170,20 +170,20 @@ Task 2
 
    Example usage:
 
-    * ```
-     ghci> parseExpr "3.14 + 1.618 * 2"
-     Success (Op (Add (Val 3.14) (Op (Mul (Val 1.618) (Val 2.0)))))
-     ```
+   ```
+   ghci> parseExpr "3.14 + 1.618 * 2"
+   Success (Op (Add (Val 3.14) (Op (Mul (Val 1.618) (Val 2.0)))))
+   ```
 
-    * ```
-     ghci> parseExpr "2 * (1 + 3)"
-     Success (Op (Mul (Val 2.0) (Op (Add (Val 1.0) (Val 3.0)))))
-     ```
+   ```
+   ghci> parseExpr "2 * (1 + 3)"
+   Success (Op (Mul (Val 2.0) (Op (Add (Val 1.0) (Val 3.0)))))
+   ```
 
-    * ```
-     ghci> parseExpr "24 + Hello"
-     Error (ErrorAtPos 3)
-     ```
+   ```
+   ghci> parseExpr "24 + Hello"
+   Error (ErrorAtPos 3)
+   ```
 
    The implementation must not use the `Read` class, as it implements similar
    functionality (the exercise is to write your own parsers). At the same time,
